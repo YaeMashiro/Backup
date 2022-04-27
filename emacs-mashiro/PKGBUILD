@@ -1,0 +1,56 @@
+# Maintainer: Mashiro <mashiro@mashiro.cat>
+pkgname=(emacs-mashiro emacs-nox-mashiro emacs-pgtk-mashiro)
+pkgver=29.0.50.20220420
+pkgrel=1
+pkgdesc='The extensible, customizable, self-documenting real-time display editor'
+arch=('aarch64' 'x86_64')
+url='https://www.gnu.org/software/emacs/emacs.html'
+license=('GPL3')
+makedepends=('git')
+source=("emacs::git://git.savannah.gnu.org/emacs.git")
+sha256sums=('SKIP')
+
+prepare() {
+  cd "$srcdir/emacs"
+
+  [[ -x configure ]] || ( ./autogen.sh git && ./autogen.sh autoconf )
+  cp -ar "$srcdir/emacs" "$srcdir/emacs-nox"
+  cp -ar "$srcdir/emacs" "$srcdir/emacs-pgtk"
+}
+
+build() {
+  cd "$srcdir/emacs"
+
+  ./configure --sysconfdir=/etc --prefix=/usr --libexecdir=/usr/lib --localstatedir=/var --without-compress-install --with-mailutils --with-native-compilation --with-xinput2 --with-xwidgets
+  make -j20 clean
+  make -j20
+
+  cd "$srcdir/emacs-pgtk"
+
+  ./configure --sysconfdir=/etc --prefix=/usr --libexecdir=/usr/lib --localstatedir=/var --without-compress-install --with-pgtk --with-mailutils --with-native-compilation --with-xinput2 --with-xwidgets
+  make -j20 clean
+  make -j20
+
+  cd "$srcdir/emacs-nox"
+  ./configure --sysconfdir=/etc --prefix=/usr --libexecdir=/usr/lib --localstatedir=/var --without-compress-install --without-x --with-mailutils --with-native-compilation
+  make -j20 clean
+  make -j20
+}
+
+package_emacs-mashiro() {
+  cd "$srcdir/emacs"
+
+  make DESTDIR="$pkgdir/" install
+}
+
+package_emacs-pgtk-mashiro() {
+  cd "$srcdir/emacs-pgtk"
+
+  make DESTDIR="$pkgdir/" install
+}
+
+package_emacs-nox-mashiro() {
+  cd "$srcdir/emacs-nox"
+
+  make DESTDIR="$pkgdir/" install
+}
