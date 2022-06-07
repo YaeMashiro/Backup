@@ -1,7 +1,7 @@
 # Maintainer: Mashiro <mashiro@mashiro.cat>
 
 pkgname=(emacs-mashiro)
-pkgver=29.0.50.20220516
+pkgver=29.0.50.$(date "+%Y%m%d")
 pkgrel=1
 pkgdesc='The extensible, customizable, self-documenting real-time display editor'
 arch=('aarch64' 'x86_64')
