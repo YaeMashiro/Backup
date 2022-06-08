@@ -1,6 +1,6 @@
 # Maintainer: Mashiro <mashiro@mashiro.cat>
 
-pkgname=emacs-mashiro-nox
+pkgname=emacs-nox-mashiro
 pkgver=29.0.50.$(date "+%Y%m%d")
 pkgrel=1
 pkgdesc='The extensible, customizable, self-documenting real-time display editor'
