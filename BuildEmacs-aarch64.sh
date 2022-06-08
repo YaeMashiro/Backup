@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 cd /Users/mashiro/Library/Caches/makepkg/emacs-mashiro-nox/
-
 makepkg
 
 ssh mashiro@15.155.2.5 'rm /Users/mashiro/Library/Caches/mashiro/aarch64/emacs*.tar.zst'
