@@ -43,7 +43,6 @@ build() {
     --without-compress-install \
     --with-mailutils \
     --with-native-compilation \
-    --with-xinput2 \
     --with-xwidgets \
     --with-pgtk
   make
