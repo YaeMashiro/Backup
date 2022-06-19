@@ -48,7 +48,7 @@ build() {
   make
 }
 
-package() {
+package_emacs-pgtk-mashiro() {
   cd "$srcdir/emacs"
 
   make DESTDIR="$pkgdir/" install
