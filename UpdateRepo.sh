@@ -18,4 +18,3 @@ if [ -f "/Users/mashiro/Library/Caches/mashiro/aarch64/emacs-nox-mashiro-29.0.50
   else
     echo "NyaNya-aarch64"
 fi
-
