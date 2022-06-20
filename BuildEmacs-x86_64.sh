@@ -8,9 +8,12 @@ if [ -f "/Users/mashiro/Library/Caches/mashiro/x86_64/emacs-mashiro-29.0.50.$(da
 
     cd /Users/mashiro/Library/Caches/mashiro/emacs/
     makepkg
+
     mv /Users/mashiro/Library/Caches/mashiro/emacs/*.zst /Users/mashiro/Library/Caches/mashiro/x86_64/
     rm -rf /Users/mashiro/Library/Caches/mashiro/emacs/pkg
     rm -rf /Users/mashiro/Library/Caches/mashiro/emacs/src
+
+    /Users/mashiro/Library/Caches/mashiro/UpdateRepo.sh
 
    # cd /Users/mashiro/Library/Caches/mashiro/emacs-pgtk/
    # makepkg
