@@ -1,8 +1,8 @@
 # Maintainer: Mashiro <mashiro@mashiro.cat>
 
 pkgname=(emacs-mashiro)
-pkgver=29.0.50.$(date "+%Y%m%d")
-pkgrel=1
+pkgver=29.0.50
+pkgrel=$(date "+%Y%m%d").1
 pkgdesc='The extensible, customizable, self-documenting real-time display editor'
 arch=('aarch64' 'x86_64')
 url='https://www.gnu.org/software/emacs/emacs.html'
@@ -19,6 +19,8 @@ depends=('sqlite3'
          'systemd'
          'jansson'
          'mailutils'
+         'm17n-lib'
+         'libotf'
          'libgccjit')
 makedepends=('git'
              'libgccjit')
@@ -48,7 +50,9 @@ build() {
 }
 
 package_emacs-mashiro() {
-  cd "$srcdir/emacs"
+  pkgdesc='The extensible, customizable, self-documenting real-time display editor'
 
-  make DESTDIR="$pkgdir/" install
+  cd "$srcdir/emacs"
+  make DESTDIR="${pkgdir}" install
+
 }
