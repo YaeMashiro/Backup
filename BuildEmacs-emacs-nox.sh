@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -f "/Users/mashiro/Library/Caches/mashiro/aarch64/emacs-nox-mashiro-29.0.50.$(date "+%Y%m%d")-1-aarch64.pkg.tar.zst" ]
+if [ -f "/Users/mashiro/Library/Caches/mashiro/aarch64/emacs-nox-mashiro-29.0.50-$(date "+%Y%m%d").1-aarch64.pkg.tar.zst" ]
   then
     echo "Nya"
   else
