@@ -17,8 +17,10 @@ depends=('sqlite3'
          'libxml2'
          'systemd'
          'jansson'
-         'mailutils')
-makedepends=('git')
+         'mailutils'
+         'libgccjit')
+makedepends=('git'
+             'libgccjit')
 source=("emacs::git://git.savannah.gnu.org/emacs.git")
 sha256sums=('SKIP')
 
