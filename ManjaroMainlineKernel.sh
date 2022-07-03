@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 RPiVERSION=5.18.7-1
-VERSION=5.18.8-2
+VERSION=5.18.9-1
 
 cd /Users/mashiro/Library/Caches/mashiro/aarch64/
 rm linux*.pkg.tar.zst
