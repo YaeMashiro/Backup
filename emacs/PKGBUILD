@@ -1,8 +1,8 @@
 # Maintainer: Mashiro <mashiro@mashiro.cat>
 
 pkgname=(emacs-mashiro)
-pkgver=29.0.50
-pkgrel=$(date "+%Y%m%d").1
+pkgver=$(date "+%Y%m%d")
+pkgrel=1
 pkgdesc='The extensible, customizable, self-documenting real-time display editor'
 arch=('aarch64' 'x86_64')
 url='https://www.gnu.org/software/emacs/emacs.html'
